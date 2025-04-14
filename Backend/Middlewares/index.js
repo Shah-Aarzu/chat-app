@@ -4,9 +4,9 @@ import { v2 as cloudinary } from "cloudinary";
 import { User } from "../Models/User.model.js";
 
 cloudinary.config({
-  cloud_name: "djuhxdgae",
-  api_key: "656669196574924",
-  api_secret: "KPnV4qriDWwnfQo9r1MJ0-XD-4s",
+  cloud_name: "",
+  api_key: "",
+  api_secret: "",
 });
 
 const storage = multer.diskStorage({
