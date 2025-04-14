@@ -1,0 +1,45 @@
+node_modules/
+# Node dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# OS junk files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.* 
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# Testing coverage
+coverage/
+
+# Optional npm cache directory
+.npm/
+
+# MongoDB dump files
+dump/
+
+# Next.js (if used for React)
+.next/
+
+# React Native (if used for mobile part)
+.expo/

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.pb-full {
+  padding-bottom: 100%;
+}
+
+.search-bar:focus + .fa-search {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .post:hover .overlay {
+    display: block;
+  }
+}
+.three-dots:hover .dropdown {
+  display: block;
+}
