@@ -8,7 +8,7 @@ import {
 export const userData = createAsyncThunk("userData", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/createUser",
+      "https://chat-app-backend-w06q.onrender.com/api/users/createUser",
       data
     );
     return res;
@@ -20,7 +20,7 @@ export const userData = createAsyncThunk("userData", async (data) => {
 export const userDetail = createAsyncThunk("userDetail", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/userDetail",
+      "https://chat-app-backend-w06q.onrender.com/api/users/userDetail",
       data
     );
     return res;
@@ -32,7 +32,7 @@ export const userDetail = createAsyncThunk("userDetail", async (data) => {
 export const updateProfile = createAsyncThunk("updateProfile", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/updateProfile",
+      "https://chat-app-backend-w06q.onrender.com/api/users/updateProfile",
       data,
       {
         headers: {

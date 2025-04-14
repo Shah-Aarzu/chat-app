@@ -5,7 +5,7 @@ import { errorNotification } from "../../../utils/Notifications";
 export const addUser = createAsyncThunk("addUser", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/addUser",
+      "https://chat-app-backend-w06q.onrender.com/api/users/addUser",
       data
     );
 
@@ -18,7 +18,7 @@ export const addUser = createAsyncThunk("addUser", async (data) => {
 export const removeUser = createAsyncThunk("removeUser", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/removeUser",
+      "https://chat-app-backend-w06q.onrender.com/api/users/removeUser",
       data
     );
 
@@ -31,7 +31,7 @@ export const removeUser = createAsyncThunk("removeUser", async (data) => {
 export const getMessages = createAsyncThunk("getMessages", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/getMessages",
+      "https://chat-app-backend-w06q.onrender.com/api/users/getMessages",
       data
     );
 
@@ -44,7 +44,7 @@ export const getMessages = createAsyncThunk("getMessages", async (data) => {
 export const setMessages = createAsyncThunk("setMessages", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/setMessages",
+      "https://chat-app-backend-w06q.onrender.com/api/users/setMessages",
       data
     );
 
@@ -57,7 +57,7 @@ export const setMessages = createAsyncThunk("setMessages", async (data) => {
 export const deleteMessage = createAsyncThunk("deleteMessage", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/deleteMessage",
+      "https://chat-app-backend-w06q.onrender.com/api/users/deleteMessage",
       data
     );
 
@@ -84,7 +84,6 @@ export const MessagesSlice = createSlice({
       .addCase(getMessages.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.messages = action.payload.messages;
-        
       })
       .addCase(getMessages.rejected, (state, action) => {
         state.status = "failed";

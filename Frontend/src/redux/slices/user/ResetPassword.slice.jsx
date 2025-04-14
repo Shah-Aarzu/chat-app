@@ -5,7 +5,7 @@ import { errorNotification } from "../../../utils/Notifications";
 export const getOTP = createAsyncThunk("getOTP", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/otpGenerator",
+      "https://chat-app-backend-w06q.onrender.com/api/users/otpGenerator",
       data
     );
 
@@ -18,7 +18,7 @@ export const getOTP = createAsyncThunk("getOTP", async (data) => {
 export const sendOTP = createAsyncThunk("sendOTP", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/verifyOTP",
+      "https://chat-app-backend-w06q.onrender.com/api/users/verifyOTP",
       data
     );
 
@@ -31,7 +31,7 @@ export const sendOTP = createAsyncThunk("sendOTP", async (data) => {
 export const resetPassword = createAsyncThunk("resetPassword", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/resetPassword",
+      "https://chat-app-backend-w06q.onrender.com/api/users/resetPassword",
       data
     );
 

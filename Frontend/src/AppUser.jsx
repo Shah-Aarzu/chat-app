@@ -15,7 +15,7 @@ const AppUser = () => {
     if (userId && localStorage.getItem("userToken") 
       // && !window.socket
     ) {
-      const socket = io("http://localhost:3000", {
+      const socket = io("https://chat-app-backend-w06q.onrender.com", {
         query: { userId },
       });
 

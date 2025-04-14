@@ -15,7 +15,7 @@ const app = express();
 const server = createServer(app);
 export const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://realtime-chat-app-sam.netlify.app",
   },
 });
 
@@ -31,7 +31,6 @@ io.on("connection", (socket) => {
   if (userId) {
     users[userId] = socket.id;
     io.emit("userisOnline", { flag: true, id: userId });
-
   }
   let user;
   socket.on("isUserOnline", (chatId) => {
@@ -45,7 +44,6 @@ io.on("connection", (socket) => {
   socket.on("userisTyping", (chatId) => {
     if (chatId) {
       user = getReceiverSocketId(chatId);
-
     }
 
     if (user) {
@@ -53,12 +51,9 @@ io.on("connection", (socket) => {
     }
   });
 
-
-
   socket.on("stopTyping", async (chatId) => {
     if (chatId) {
       user = getReceiverSocketId(chatId);
-
     }
 
     if (user) {
@@ -67,7 +62,6 @@ io.on("connection", (socket) => {
   });
 
   socket.on("getDeleteMessageId", ({ messageId }) => {
-
     socket.emit("sendDeleteMessageId", { messageId });
   });
 
@@ -81,7 +75,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://realtime-chat-app-sam.netlify.app",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type,Authorization",
+  })
+);
 
 app.use("/api/users", userRouter);
 

@@ -5,7 +5,7 @@ import { errorNotification } from "../../../utils/Notifications";
 export const userAuth = createAsyncThunk("userAuth", async (data) => {
   try {
     const res = await axios.post(
-      "http://localhost:3000/api/users/loginUser",
+      "https://chat-app-backend-w06q.onrender.com/api/users/loginUser",
       data
     );
     return res;
